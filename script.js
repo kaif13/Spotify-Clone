@@ -230,6 +230,13 @@ async function main() {
         .getElementsByTagName("input")[0].value = 10;
     }
   });
+
+  const hamburger = document.querySelector(".hamburger");
+  const header = document.querySelector(".header");
+
+  hamburger.addEventListener("click", () => {
+    header.classList.toggle("remove-sticky");
+  });
 }
 
 main();
