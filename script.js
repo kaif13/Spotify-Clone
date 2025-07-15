@@ -156,23 +156,43 @@ async function main() {
   });
 
   // Add an event listener to previous
+  // Add an event listener to previous
   previous.addEventListener("click", () => {
+    if (!songs || songs.length === 0) {
+      console.warn("No songs loaded.");
+      return;
+    }
+
     currentSong.pause();
     console.log("Previous clicked");
-    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-    if (index - 1 >= 0) {
+
+    const currentSrc = decodeURIComponent(currentSong.src.split("/").pop());
+    const index = songs.indexOf(currentSrc);
+
+    if (index > 0) {
       playMusic(songs[index - 1]);
+    } else {
+      console.log("Already at the first song.");
     }
   });
 
   // Add an event listener to next
   next.addEventListener("click", () => {
+    if (!songs || songs.length === 0) {
+      console.warn("No songs loaded.");
+      return;
+    }
+
     currentSong.pause();
     console.log("Next clicked");
 
-    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-    if (index + 1 < songs.length) {
+    const currentSrc = decodeURIComponent(currentSong.src.split("/").pop());
+    const index = songs.indexOf(currentSrc);
+
+    if (index >= 0 && index < songs.length - 1) {
       playMusic(songs[index + 1]);
+    } else {
+      console.log("Already at the last song.");
     }
   });
 
