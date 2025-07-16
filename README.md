@@ -10,7 +10,6 @@ A responsive front-end clone of Spotify built using **HTML**, **CSS**, and **Jav
 - 🎨 Fully responsive layout for desktop and mobile
 - 🎵 Preloaded songs with album cover and info
 - 🌓 Modern UI inspired by Spotify
-- ⚡ Smooth interaction using vanilla JavaScript
 
 ---
 
@@ -27,23 +26,6 @@ A responsive front-end clone of Spotify built using **HTML**, **CSS**, and **Jav
 - **HTML5**
 - **CSS3** (Flexbox, Grid)
 - **JavaScript** (ES6)
-
----
-
-## 📂 Folder Structure
-
-```
-spotify-clone/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── images/
-│   │   └── demo.png
-│   └── music/
-└── README.md
-```
 
 ---
 
